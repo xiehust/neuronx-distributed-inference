@@ -51,7 +51,7 @@ from neuronx_distributed_inference.models.config import NeuronConfig
 
 # Directories — adjust these to your instance layout
 DIT_COMPILE_DIR = os.environ.get(
-    "LTX2_DIT_COMPILE_DIR", "/home/ubuntu/ltx2_nxdi_compiled_1024/"
+    "LTX2_DIT_COMPILE_DIR", "/home/ubuntu/ltx2_nxdi_compiled_1024_256x256_f25/"
 )
 GEMMA3_COMPILE_DIR = os.environ.get(
     "LTX2_GEMMA3_COMPILE_DIR", "/home/ubuntu/gemma3_encoder_compiled_1024/"
@@ -68,7 +68,7 @@ VAE_OVERLAP_H = int(os.environ.get("LTX2_VAE_OVERLAP_H", "2"))
 VAE_OVERLAP_W = int(os.environ.get("LTX2_VAE_OVERLAP_W", "2"))
 OUTPUT_DIR = os.environ.get("LTX2_OUTPUT_DIR", "/home/ubuntu/ltx2_output/")
 TP_DEGREE = 4
-HEIGHT, WIDTH, NUM_FRAMES = 512, 768, 121
+HEIGHT, WIDTH, NUM_FRAMES = 256, 256, 25
 NUM_STEPS = 40
 PROMPT = (
     "A close-up shot of a young waitress in a retro 1950s diner, her warm brown eyes "

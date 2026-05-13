@@ -40,9 +40,9 @@ def cross_attn_kernel(q_ref, k_ref, v_ref, mask_ref):
     q_seq = q_ref.shape[1]
     n_q_grps = q_seq // _XATTN_Q_GRP
 
-    # Allocate output in HBM (returned to XLA)
+    # Allocate output in shared HBM (returned to XLA)
     out_ref = nl.ndarray(
-        (batch_heads, q_seq, _XATTN_D), dtype=q_ref.dtype, buffer=nl.hbm
+        (batch_heads, q_seq, _XATTN_D), dtype=q_ref.dtype, buffer=nl.shared_hbm
     )
 
     # Ones column for mask broadcasting via outer product
